@@ -1,19 +1,15 @@
 
 import React, {Component} from "react";
-import {View, Text} from 'react-native';
-import API from './src/utils/api';
+
+import Home from './src/screens/home';
+
 class App extends Component {
   
-  async componentDidMount(){
-    console.log('el componente será montado');
-    API.getTopTracks();
-  }
+  
 
   render() {
     return (
-      <View>
-        <Text>Hola GeoTop</Text>
-      </View>
+      <Home/>
     );
   }
 }
