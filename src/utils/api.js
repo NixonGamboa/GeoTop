@@ -12,7 +12,6 @@ class Api {
       //realiza la solicitud y retorna los datos
       const query = await fetch(API_REQUEST);
       const data = await query.json();
-      console.log(data.tracks)
       return data.tracks;
 
     } catch (error) {

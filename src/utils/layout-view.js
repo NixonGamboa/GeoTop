@@ -1,6 +1,5 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, KeyboardAvoidingView, View, StyleSheet, Dimensions,StatusBar} from 'react-native';
-//import { Header } from 'react-navigation';
+import {View, StyleSheet, Dimensions} from 'react-native';
 
 function LayoutView (props){
   return(
@@ -23,7 +22,7 @@ const styles=StyleSheet.create({
   },
   container:{
     flex:1,
-    height: Dimensions.get('window').height/*-Header.HEIGHT-StatusBar.currentHeight*/,
+    height: Dimensions.get('window').height,
   },
 })
 
