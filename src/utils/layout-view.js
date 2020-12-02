@@ -15,10 +15,8 @@ const styles=StyleSheet.create({
     flex:1,
     width: '100%',
     height: '100%',
-  },
-  background:{
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#243d3d',
+    
   },
   container:{
     flex:1,

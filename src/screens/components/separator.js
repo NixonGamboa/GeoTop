@@ -9,8 +9,8 @@ function Separator (props) {
 }
 const styles = StyleSheet.create ({
 	container:{
-		borderTopWidth:1,
-		marginHorizontal: 8,
+		borderTopWidth:2,
+		borderColor:'#091010',
 	}
 })
 

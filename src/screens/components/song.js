@@ -12,15 +12,12 @@ function Song (props) {
 						style = {styles.photo}
 						source = {{uri:props.image[1]['#text']}}
 						/>	
-					<View style = {styles.durationText} >
-						<Text style = {styles.titleTxt} >{props.duration}</Text>
-					</View>
+					
 				</View>
 
 				<View style = {styles.right} >
-					<Text style=  {styles.priceTxt} >{props.name} </Text>
-					<Text style= {styles.addNoteTxt} >{props.artist.name} </Text>
-					<Text style= {styles.detailTxt}>$ {props.url}.</Text>
+					<Text style=  {styles.nameSongTxt} >{props.name} </Text>
+					<Text style= {styles.nameArtistTxt} >{props.artist.name} </Text>
 				</View>
 			
 			</View>
@@ -36,61 +33,38 @@ const styles = StyleSheet.create({
 
 	},
 	left:{
-		width:140,
-		height:180,
+		width:100,
+		height:100,
 	},
 	photo:{
 		width:'100%',
 		height:'100%',
 		resizeMode:'contain',
 	},
-	durationText:{
-		position:'absolute',
-		left:0,
-		top:0,
-		backgroundColor:'black',
-		paddingVertical:5,
-		paddingHorizontal:8,
-		width:50,
-	},
-	titleTxt:{
-		fontFamily: 'serif',
-		fontStyle: 'italic',
-		color:'white',
-		fontSize:11,
-	},
 	right:{
 		flex:1,
 		paddingLeft:8,
 		paddingVertical: 2,
-		justifyContent:'space-between',
+		justifyContent: 'flex-end',
 	},
-	detailTxt:{
-		fontSize: 12,
-		textAlign:'justify',
+	nameSongTxt:{
+		fontSize: 18,
 		fontFamily: 'sans-serif',
-		fontStyle: 'italic', 
-		color: '#000',
-		paddingTop: 4,
-		
-	},
-	addNoteTxt:{
-		fontSize: 12,
-		textAlign:'justify',
-		fontFamily: 'sans-serif',
-		fontStyle: 'italic', 
-		color: '#000',
-		
-	},
-	priceTxt:{
-		fontSize: 20,
-		fontFamily: 'serif',
-		fontStyle: 'italic', 
-		textAlign:'right',
-		marginRight: 16,
-		color: '#4c4c4c',
+		textAlign:'left',
+		marginLeft: 16,
+		color: '#fff',
 		fontWeight:'bold',
 	},
+	nameArtistTxt:{
+		fontSize: 14,
+		textAlign:'justify',
+		marginLeft: 16,
+		fontFamily: 'sans-serif',
+		fontStyle: 'italic', 
+		color: '#fff',
+		
+	},
+	
 })
 
 export default Song;

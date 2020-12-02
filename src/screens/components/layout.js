@@ -4,27 +4,36 @@ import { View, Text, StyleSheet} from 'react-native';
 function Layout (props){
 	return(
   		<View style ={styles.containerLayout}>
-  			<Text style={styles.txtTitle}>
-  				{props.title}
-  			</Text>
-  			{props.children}
+			<View style ={styles.containerTitle}>
+			  <Text style={styles.txtTitle}>
+  					{props.title}
+  				</Text>
+			</View>
+			<View style ={styles.containerList}>
+				{props.children}
+			</View>
   		</View>
 	)
 }
 
 const styles = StyleSheet.create({
 	containerLayout:{
-		marginHorizontal: 8,
 		flex:1,
 	},
+	containerTitle:{
+		backgroundColor:'#091010',
+	},
 	txtTitle:{
-		fontSize: 16,
-    textAlign:'left',
+		fontSize: 28,
+    textAlign:'center',
     textAlignVertical: 'center', 
-    fontFamily: 'serif',
-    fontStyle: 'italic',
-    color: '#000',
-    marginVertical: 4,
+	fontFamily: 'sans-serif',
+	fontWeight: "bold",
+    color:'#fff',
+    marginVertical: 16,
+	},
+	containerList:{
+		marginHorizontal: 8,
 	}
 })
 

@@ -25,7 +25,7 @@ class TracksList extends Component {
 		
 		return (
 			<Layout
-			title = "Top 10 Colombia:" >
+			title = "Top 10 Colombia" >
 				<FlatList
 					data= {this.props.list.track}
 					ListEmptyComponent={this.renderEmpty}
