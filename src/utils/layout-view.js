@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
+import { Header } from '@react-navigation/native';
 
 function LayoutView (props){
   return(

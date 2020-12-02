@@ -2,17 +2,22 @@ import React from 'react';
 import {View, ImageBackground, Text, StyleSheet,TouchableOpacity}from 'react-native';
 
 function Song (props) {
+	console.log('props de elemento de la lista',props);
 	return (
 		<TouchableOpacity
-			//onPress={props.onPress}
+			onPress={props.onPress}
 			activeOpacity = {0.7}>
 			<View style = {styles.container} > 
+				
+				<View style = {styles.indexContainer} >
+					<Text style = {styles.indexStyle} >{props.index} </Text>
+				</View>
+				
 				<View style = {styles.left} >
 					<ImageBackground
 						style = {styles.photo}
 						source = {{uri:props.image[1]['#text']}}
 						/>	
-					
 				</View>
 
 				<View style = {styles.right} >
@@ -32,9 +37,20 @@ const styles = StyleSheet.create({
 		paddingVertical: 8,
 
 	},
+	indexContainer:{
+		justifyContent:'center',
+	},
+	indexStyle:{
+		fontSize: 18,
+		fontFamily: 'sans-serif',
+		textAlign:'left',
+		marginRight:16,
+		color: '#fff',
+		fontWeight:'bold',
+	},
 	left:{
-		width:100,
-		height:100,
+		width:64,
+		height:64,
 	},
 	photo:{
 		width:'100%',
@@ -45,7 +61,7 @@ const styles = StyleSheet.create({
 		flex:1,
 		paddingLeft:8,
 		paddingVertical: 2,
-		justifyContent: 'flex-end',
+		justifyContent: 'center',
 	},
 	nameSongTxt:{
 		fontSize: 18,

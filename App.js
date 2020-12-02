@@ -1,15 +1,17 @@
 
 import React, {Component} from "react";
+import {NavigationContainer} from '@react-navigation/native';
+import GeoStack from './src/utils/stack';
 
-import Home from './src/screens/home';
+
 
 class App extends Component {
   
-  
-
   render() {
     return (
-      <Home/>
+      <NavigationContainer>
+        <GeoStack/>  
+      </NavigationContainer> 
     );
   }
 }

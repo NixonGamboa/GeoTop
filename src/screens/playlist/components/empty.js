@@ -11,15 +11,16 @@ function Empty (props) {
 const styles = StyleSheet.create ({
 	container:{
 		padding:10,
+		alignContent:'center',
+		justifyContent:'center',
 
 	},
 	text:{
-		fontSize: 12,
-	    textAlign:'left',
+		fontSize: 18,
+	    textAlign:'center',
 	    textAlignVertical: 'center', 
-	    fontFamily: 'serif',
-	    fontStyle: 'italic', 
-	    color: '#000',
+	    fontFamily: 'sans-serif',
+	    color: '#fff',
 	    marginTop: 8,
 	    marginBottom: 8,
 	},

@@ -10,22 +10,24 @@ import Song from '../components/song';
 class TracksList extends Component {
 	renderEmpty = () => <Empty text = "No hay canciones" />
 	itemSeparator = () => <Separator />
-	/*handlePress = (item) => {
+	handlePress = (item,index) => {
 		//aqui va lo que se vaya a hacer cuando se presione el item
-	}*/
-	renderItem = ({item})=> {
+		this.props.navigation.navigate('TRACK',{item,index});
+		console.log(this.props)
+	}
+	renderItem = ({item,index})=> {
 		return (
 			<Song 
 				{...item}
-				/*onPress={()=>{this.handlePress(item)}}*/
+				index = {index+1}
+				onPress={()=>{this.handlePress(item,index+1)}}
 				/>
 			)}
 	
 	render() {
 		
 		return (
-			<Layout
-			title = "Top 10 Colombia" >
+			<Layout >
 				<FlatList
 					data= {this.props.list.track}
 					ListEmptyComponent={this.renderEmpty}
