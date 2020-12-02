@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-//import {StatusBar} from 'react-native';
 
 import Layout from '../../utils/layout-view';
 import TrackList from './containers/tracks-list';
@@ -11,12 +10,15 @@ class Home extends Component {
 	}
 	
     async componentDidMount(){
+		//Obteniendo datos de la api
 		const tracks = await API.getTopTracks(10);
-		console.log(tracks);
 		this.setState({
 			topTracks: tracks,
 		})
-		console.log(this.props);
+		//Actualizando el headerTitle
+		var title = `PLAY LIST ${tracks["@attr"].country.toUpperCase()} TOP 20`;
+		this.props.navigation.setOptions({ headerTitle: title })
+				
     }
 	
     render(){

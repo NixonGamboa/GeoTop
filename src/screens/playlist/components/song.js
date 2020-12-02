@@ -2,7 +2,6 @@ import React from 'react';
 import {View, ImageBackground, Text, StyleSheet,TouchableOpacity}from 'react-native';
 
 function Song (props) {
-	console.log('props de elemento de la lista',props);
 	return (
 		<TouchableOpacity
 			onPress={props.onPress}

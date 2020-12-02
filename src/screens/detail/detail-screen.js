@@ -4,6 +4,13 @@ import Layout from '../../utils/layout-view';
 import Track from './containers/track-detail';
 
 class TrackScreen extends Component {
+	componentDidMount(){
+		//Actualizando el headerTitle
+		var country= this.props.route.params.attr.country
+		var title = `Visualizando de ${country} Top20 `;
+		this.props.navigation.setOptions({ headerTitle: title })
+				
+    }
 	
   	render(){
 		return(

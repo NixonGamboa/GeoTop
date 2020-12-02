@@ -7,7 +7,9 @@ class Api {
         
       //define el api key y la url
       const ApiKey ='829751643419a7128b7ada50de590067';
-      const API_REQUEST =`http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=colombia&api_key=${ApiKey}&limit=20&format=json`;
+      var country = 'colombia';
+      var limit = 20;
+      const API_REQUEST =`http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=${country}&api_key=${ApiKey}&limit=${limit}&format=json`;
         
       //realiza la solicitud y retorna los datos
       const query = await fetch(API_REQUEST);

@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, ImageBackground, Text, StyleSheet, Dimensions,Linking}from 'react-native';
+import {View, ImageBackground, Text, StyleSheet, Dimensions, TouchableOpacity}from 'react-native';
 
 function Detail (props) {
-	console.log(props)
 	return (
 		<View style = {styles.container} > 
 				<View style = {styles.photoContainer} >
@@ -19,15 +18,16 @@ function Detail (props) {
 					<Text style=  {styles.nameSongTxt} >{props.name} </Text>
 					<Text style= {styles.nameArtistTxt} >{props.artist.name} </Text>
 					<Text style=  {styles.durationTxt} >Duración: {props.len} </Text>
-					
-					<View style={styles.button}>
-					<Text style={styles.urlTxt}
-					      	onPress={() => Linking.openURL(props.url)}>
-								  Escúchala Aquí! en LastFM.
-						</Text>
-					</View>
 
-				</View>
+				</View>	
+				<TouchableOpacity style={styles.button}
+					onPress={props.onPress}
+					activeOpacity = {0.7}
+					>
+					<Text style={styles.urlTxt}>Escúchala Aquí! en LastFM.</Text>
+				</TouchableOpacity>
+
+				
 			
 		</View>
 		
@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
 	},
 	indexContain:{
 		position:'absolute',
-		right:0,
-		top:0,
+		right:8,
+		top:8,
 		backgroundColor:'#00000022',
-		width:56,
-		height:64,
-		borderRadius:28,
+		width:45,
+		height:45,
+		borderRadius:23,
 		paddingVertical:5,
 		paddingHorizontal:8,
 		justifyContent:'center',
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
 		fontFamily: 'serif',
 		fontStyle: 'italic',
 		color:'black',
-		fontSize:32,
+		fontSize:25,
 	},
 	textContainer:{
 		flex:1,
 		width:Dimensions.get('window').width*0.8,
 		paddingVertical: 2,
-		justifyContent: 'space-around',
+		justifyContent: 'flex-start',
 	},
 	nameSongTxt:{
 		fontSize: 24,
@@ -84,27 +84,31 @@ const styles = StyleSheet.create({
 		marginTop:24,
 	},
 	nameArtistTxt:{
-		fontSize: 18,
+		fontSize: 20,
 		textAlign:'justify',
 		fontFamily: 'sans-serif',
 		fontStyle: 'italic', 
 		color: '#fff',
-		
+		marginTop:16,
 	},
 	durationTxt:{
-		fontSize: 18,
+		fontSize: 16,
 		textAlign:'justify',
 		fontFamily: 'sans-serif',
 		color: '#fff',
+		marginTop:20,
 		
 	},
 	button:{
+		width:Dimensions.get('window').width*0.8,
+		bottom:8,
 		alignItems:'center',
+		paddingBottom:24,
 	},
 	urlTxt:{
-		width:Dimensions.get('window').width*0.5,
+		paddingHorizontal:4,
 		height:32,
-		fontSize: 12,
+		fontSize: 14,
 		textAlign:'center',
 		textAlignVertical:'center',
 		fontFamily: 'serif',

@@ -8,12 +8,14 @@ import Song from '../components/song';
 
 
 class TracksList extends Component {
-	renderEmpty = () => <Empty text = "No hay canciones" />
+	renderEmpty = () => <Empty text = "Cargando canciones." />
 	itemSeparator = () => <Separator />
 	handlePress = (item,index) => {
 		//aqui va lo que se vaya a hacer cuando se presione el item
-		this.props.navigation.navigate('TRACK',{item,index});
-		console.log(this.props)
+		
+		//pasando parametros a la sgte vista, etre ellos el objeto info de la lista (Pais, pagina, etc)
+		const attr = this.props.list["@attr"];		
+		this.props.navigation.navigate('TRACK',{item,index,attr});
 	}
 	renderItem = ({item,index})=> {
 		return (
